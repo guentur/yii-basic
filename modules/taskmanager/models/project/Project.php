@@ -1,7 +1,9 @@
 <?php
 
-namespace app\modules\taskmanager\models;
+namespace app\modules\taskmanager\models\project;
 
+use app\modules\taskmanager\models\section\Section;
+use app\modules\taskmanager\models\SectionQuery;
 use Yii;
 
 /**
@@ -11,7 +13,7 @@ use Yii;
  * @property string $title
  * @property string|null $desc
  *
- * @property Section[] $sections
+ * @property \app\modules\taskmanager\models\section\Section[] $sections
  */
 class Project extends \yii\db\ActiveRecord
 {

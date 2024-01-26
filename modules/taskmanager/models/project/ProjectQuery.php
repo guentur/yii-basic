@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\taskmanager\models;
+namespace app\modules\taskmanager\models\project;
 
 /**
  * This is the ActiveQuery class for [[Project]].

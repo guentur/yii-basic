@@ -1,10 +1,9 @@
 <?php
 
-namespace app\modules\taskmanager\models;
+namespace app\modules\taskmanager\models\project;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\taskmanager\models\Project;
 
 /**
  * ProjectSearch represents the model behind the search form of `app\modules\taskmanager\models\Project`.
