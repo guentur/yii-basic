@@ -50,6 +50,11 @@ $config = [
             ],
         ],
     ],
+    'modules' => [
+        'taskmanager' => [
+            'class' => 'app\modules\taskmanager\Module',
+        ],
+    ],
     'params' => $params,
 ];
 
