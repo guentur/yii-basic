@@ -2,18 +2,16 @@
 
 namespace app\modules\taskmanager\controllers;
 
-use app\modules\taskmanager\models\project\Project;
-use app\modules\taskmanager\models\project\ProjectSearch;
+use app\modules\taskmanager\models\section\Section;
 use app\modules\taskmanager\models\section\SectionSearch;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\data\ArrayDataProvider;
 
 /**
- * ProjectController implements the CRUD actions for Project model.
+ * SectionController implements the CRUD actions for Section model.
  */
-class ProjectController extends Controller
+class SectionController extends Controller
 {
     /**
      * @inheritDoc
@@ -34,13 +32,13 @@ class ProjectController extends Controller
     }
 
     /**
-     * Lists all Project models.
+     * Lists all Section models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new ProjectSearch();
+        $searchModel = new SectionSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -50,32 +48,26 @@ class ProjectController extends Controller
     }
 
     /**
-     * Displays a single Project model.
+     * Displays a single Section model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-
-        $sections = $model->getSections()->all();
-        $sectionsDataProvider = new ArrayDataProvider(['allModels' => $sections]);
-
         return $this->render('view', [
-            'model' => $model,
-            'sectionsDataProvider' => $sectionsDataProvider,
+            'model' => $this->findModel($id),
         ]);
     }
 
     /**
-     * Creates a new Project model.
+     * Creates a new Section model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Project();
+        $model = new Section();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -91,7 +83,7 @@ class ProjectController extends Controller
     }
 
     /**
-     * Updates an existing Project model.
+     * Updates an existing Section model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -111,7 +103,7 @@ class ProjectController extends Controller
     }
 
     /**
-     * Deletes an existing Project model.
+     * Deletes an existing Section model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -125,15 +117,15 @@ class ProjectController extends Controller
     }
 
     /**
-     * Finds the Project model based on its primary key value.
+     * Finds the Section model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Project the loaded model
+     * @return \app\modules\taskmanager\models\section\Section the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Project::findOne(['id' => $id])) !== null) {
+        if (($model = Section::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

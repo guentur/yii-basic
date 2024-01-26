@@ -2,6 +2,10 @@
 
 namespace app\modules\taskmanager\models\section;
 
+use app\modules\taskmanager\models\project\Project;
+use app\modules\taskmanager\models\project\ProjectQuery;
+use app\modules\taskmanager\models\task\Task;
+use app\modules\taskmanager\models\task\TaskQuery;
 use Yii;
 
 /**
@@ -54,7 +58,7 @@ class Section extends \yii\db\ActiveRecord
     /**
      * Gets query for [[Project]].
      *
-     * @return \yii\db\ActiveQuery|ProjectQuery
+     * @return \yii\db\ActiveQuery|\app\modules\taskmanager\models\project\ProjectQuery
      */
     public function getProject()
     {
