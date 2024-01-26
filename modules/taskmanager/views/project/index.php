@@ -1,11 +1,12 @@
 <?php
 
-use app\modules\taskmanager\models\Project;
-use yii\helpers\Html;
-use yii\helpers\Url;
+use app\modules\taskmanager\models\project\Project;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\Pjax;
+
 /** @var yii\web\View $this */
 /** @var \app\modules\taskmanager\models\project\ProjectSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
@@ -29,13 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'title',
             'desc:ntext',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Project $model, $key, $index, $column) {
+
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],
