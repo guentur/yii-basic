@@ -2,6 +2,8 @@
 
 namespace app\modules\taskmanager\models\task;
 
+use app\modules\taskmanager\models\section\Section;
+use app\modules\taskmanager\models\section\SectionQuery;
 use Yii;
 
 /**
@@ -31,7 +33,7 @@ class Task extends \yii\db\ActiveRecord
     {
         return [
             [['section_id'], 'integer'],
-            [['project_id'], 'required'],
+//            [['project_id'], 'required'],
             [['desc'], 'string'],
             [['title'], 'string', 'max' => 255],
             [['section_id'], 'exist', 'skipOnError' => true, 'targetClass' => Section::class, 'targetAttribute' => ['section_id' => 'id']],
