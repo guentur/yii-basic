@@ -5,7 +5,6 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /** @var yii\web\View $this */
-
 /** @var Project $model */
 /** @var yii\data\ArrayDataProvider $sectionsDataProvider */
 
@@ -39,5 +38,4 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
     <?php include_once 'project_sections.php' ?>
-
 </div>

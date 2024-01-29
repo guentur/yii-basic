@@ -14,9 +14,8 @@ class TableName extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
-     * pjax
      * project
-     *      sprint
+     *      section
      *          task
      */
     public static function tableName()
