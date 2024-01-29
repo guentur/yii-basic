@@ -36,6 +36,7 @@ class Section extends \yii\db\ActiveRecord
     {
         return [
             [['project_id'], 'integer'],
+            [['project_id'], 'required'],
             [['desc'], 'string'],
             [['title'], 'string', 'max' => 255],
             [['project_id'], 'exist', 'skipOnError' => true, 'targetClass' => Project::class, 'targetAttribute' => ['project_id' => 'id']],
