@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var \app\modules\taskmanager\models\project\Project $model */
+/** @var app\modules\taskmanager\models\task\Task $model */
 
-$this->title = Yii::t('app', 'Create Project');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Projects'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Task');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Tasks'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="project-create">
+<div class="task-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

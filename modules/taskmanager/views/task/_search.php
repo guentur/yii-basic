@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var \app\modules\taskmanager\models\project\ProjectSearch $model */
+/** @var app\modules\taskmanager\models\task\TaskSearch $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="project-search">
+<div class="task-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,6 +19,8 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'id') ?>
+
+    <?= $form->field($model, 'section_id') ?>
 
     <?= $form->field($model, 'title') ?>
 

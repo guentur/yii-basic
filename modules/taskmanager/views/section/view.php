@@ -1,19 +1,17 @@
 <?php
 
-use app\modules\taskmanager\models\project\Project;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /** @var yii\web\View $this */
-/** @var Project $model */
-/** @var yii\data\ArrayDataProvider $sectionsDataProvider */
+/** @var \app\modules\taskmanager\models\section\Section $model */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Projects'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Sections'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="project-view">
+<div class="section-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -32,10 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            'project_id',
             'title',
             'desc:ntext',
         ],
     ]) ?>
 
-    <?php include_once 'project_sections.php' ?>
 </div>
